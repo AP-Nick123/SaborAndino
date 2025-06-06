@@ -1,0 +1,151 @@
+/* src/components/sections/ReservationSection/ReservationSection.module.css */
+
+.reservationSection {
+  background-color: #f7f8fa; /* Fondo gris claro */
+  padding: 6rem 2rem; /* Más padding para hacerlo más grande */
+}
+
+.container {
+  max-width: 900px; /* Contenedor más ancho */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.8rem; /* Título más grande */
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem; /* Subtítulo más grande */
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  line-height: 1.6;
+}
+
+.formCard {
+  background-color: #ffffff;
+  padding: 3rem; /* Más padding interno */
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.formSection {
+  margin-bottom: 2.5rem;
+}
+
+.formSection h4 {
+  font-size: 1.5rem; /* Títulos de sección más grandes */
+  color: #1a1a2e;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.formGrid, .detailsGrid {
+  display: grid;
+  gap: 2rem; /* Más separación */
+}
+
+.formGrid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.detailsGrid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  font-size: 1rem; /* Labels más grandes */
+  color: #333;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  font-size: 1.1rem; /* Texto de inputs más grande */
+  padding: 1rem; /* Inputs más altos */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  width: 100%;
+  box-sizing: border-box; /* Importante para que el padding no afecte el ancho */
+}
+
+.submitButton {
+  width: 100%;
+  padding: 1.2rem; /* Botón más grande */
+  font-size: 1.2rem; /* Texto de botón más grande */
+  font-weight: bold;
+  color: white;
+  background-color: #ff8c00;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #e07b00;
+  transform: translateY(-2px);
+}
+
+/* --- Tarjetas de Información --- */
+.infoCardsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.infoCard {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.cardIcon {
+    font-size: 2.5rem;
+    color: #ff8c00;
+    margin-bottom: 1rem;
+}
+
+.infoCard h5 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a2e;
+}
+
+.infoCard p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* --- DISEÑO RESPONSIVO --- */
+@media (max-width: 768px) {
+  .title { font-size: 2.2rem; }
+  .formCard { padding: 2rem; }
+  
+  .formGrid, .detailsGrid, .infoCardsContainer {
+    grid-template-columns: 1fr; /* Apila todo en una sola columna */
+  }
+}

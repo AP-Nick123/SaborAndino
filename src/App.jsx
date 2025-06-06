@@ -1,17 +1,21 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home/Home.jsx';
-import Menu from './pages/Home/Menu.jsx';
-import Gallery from './pages/Home/Gallery.jsx';
+// src/App.jsx
 
-const App = () => (
-  <BrowserRouter>
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+// 1. Solo importamos las PÁGINAS completas
+import ReservasPage from './pages/Reservas/ReservasPage.jsx';
+import ContactoPage from './pages/Contacto/ContactoPage.jsx';
+
+function App() {
+  return (
+    // 2. Las rutas ahora son una lista simple. No están anidadas.
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/menu" element={<Menu />} />
-      <Route path="/gallery" element={<Gallery />} />
+      <Route path="/" element={<ReservasPage />} />
+      <Route path="/contacto" element={<ContactoPage />} />
+      {/* Puedes añadir más rutas aquí en el futuro */}
     </Routes>
-  </BrowserRouter>
-);
+  );
+}
 
 export default App;
