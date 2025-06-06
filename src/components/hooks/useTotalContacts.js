@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 // Asegúrate que la ruta a tu config de Firebase sea correcta
-import { db } from '../../context/AuthContext.js'; 
+import { db } from '../../firebase/config'; 
 import { collection, getDocs } from 'firebase/firestore';
 
 export const useTotalContacts = () => {
