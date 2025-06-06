@@ -1,0 +1,74 @@
+/* src/components/admin/Sidebar.css */
+
+.admin-tabs-nav-container {
+  width: 100%;
+  background-color: #fff; /* Fondo blanco para la barra de navegación */
+  box-sizing: border-box;
+  padding: 0; /* Padding ya está en admin-header-section */
+  position: relative;
+  z-index: 1;
+}
+
+.admin-sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px; /* Espacio horizontal entre los ítems de menú */
+  position: relative;
+  padding-bottom: 15px; /* Espacio para la línea activa */
+}
+
+.admin-sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: color 0.2s ease, font-weight 0.2s ease;
+  font-weight: 500;
+  color: #6c757d;
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+  padding-bottom: 15px; /* Duplica el padding-bottom de la lista para alinear la línea */
+}
+
+.admin-sidebar-item:hover {
+  color: #495057;
+}
+
+.admin-sidebar-item.active {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.admin-sidebar-item.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Coloca la línea en la parte inferior del ítem */
+  width: 100%;
+  height: 2px;
+  background-color: #ff9100;
+}
+
+.admin-sidebar-item .icon {
+  margin-right: 8px;
+  font-size: 1.1em;
+  color: #6c757d;
+}
+
+.admin-sidebar-item.active .icon {
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .admin-tabs-nav-container {
+    padding: 0 20px;
+  }
+  .admin-sidebar-menu {
+    gap: 15px;
+  }
+}

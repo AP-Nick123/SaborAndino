@@ -1,0 +1,49 @@
+/* src/components/admin/PanelAdmin.css */
+
+.admin-overall-container {
+  display: flex;
+  flex-direction: column; /* Apila el encabezado/nav y el contenido */
+  min-height: 100vh; /* Ocupa al menos toda la altura de la ventana */
+  width: 100vw; /* Ocupa todo el ancho de la ventana */
+  background-color: #f0f2f5; /* Un fondo general ligeramente gris fuera del panel */
+  font-family: Arial, sans-serif;
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+  overflow-x: hidden; /* Evita el scroll horizontal indeseado */
+}
+
+.admin-header-section {
+  width: 100%;
+  background-color: #fff; /* Fondo blanco para el área del título y nav */
+  padding: 20px 30px; /* Padding para esta sección */
+  box-sizing: border-box;
+  border-bottom: 1px solid #e0e0e0; /* Línea divisoria debajo de la cabecera */
+  display: flex;
+  flex-direction: column; /* Título y nav se apilan */
+}
+
+.admin-title-area {
+  text-align: left;
+  margin-bottom: 20px; /* Espacio entre el título y la nav */
+}
+
+.admin-main-title {
+  font-size: 1.8em; /* Tamaño de fuente más grande para el título */
+  margin: 0;
+  color: #343a40; /* Color de título más oscuro */
+  font-weight: 600; /* Más negrita */
+}
+
+.admin-description {
+  font-size: 0.9em;
+  color: #6c757d; /* Color de texto más tenue para la descripción */
+  margin: 5px 0 0 0;
+}
+
+
+/* Estilos para el área de contenido principal (Dashboard, MenuManagement, etc.) */
+.admin-content-area {
+  flex: 1; /* Permite que esta área ocupe el espacio restante verticalmente */
+  padding: 30px; /* Padding alrededor del contenido */
+  width: 100%; /* Asegura que el área de contenido ocupe el 100% del ancho disponible */
+  box-sizing: border-box; /* Incluye padding en el ancho */
+}

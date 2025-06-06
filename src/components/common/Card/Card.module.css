@@ -1,0 +1,4 @@
+.card {
+  border: 1px solid var(--border-color); /* From _variables.scss */
+  border-radius: 8px;
+}
