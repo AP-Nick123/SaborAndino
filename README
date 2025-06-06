@@ -1,0 +1,67 @@
+src/
+├── assets/
+│   ├── images/         // Galería de fotos de platos y ambiente 
+│   │   ├── logo.png    // Logo del restaurante 
+│   │   ├── dish1.jpg
+│   │   └── ambiance.jpg
+│   ├── styles/         // Archivos de estilos globales o variables SCSS/CSS
+│   │   ├── _variables.scss
+│   │   └── global.css
+│   └── data/           // Archivos JSON o mocks de datos (ej. menú si no hay API aún)
+│       └── menu.json   // Descripción y precios del menú 
+├── components/         // Componentes reutilizables y atómicos
+│   ├── common/         // Componentes muy genéricos (botones, inputs, cards)
+│   │   ├── Button/
+│   │   │   ├── Button.js
+│   │   │   └── Button.module.css
+│   │   ├── Input/
+│   │   │   ├── Input.js
+│   │   │   └── Input.module.css
+│   │   └── Card/
+│   │       ├── Card.js
+│   │       └── Card.module.css
+│   ├── layout/         // Componentes de estructura de la página (Header, Footer, Navbar)
+│   │   ├── Header/     // Logo, horario y navegación 
+│   │   │   ├── Header.js
+│   │   │   └── Header.module.css
+│   │   ├── Footer/
+│   │   │   ├── Footer.js
+│   │   │   └── Footer.module.css
+│   │   └── Navbar/     // Navegación principal 
+│   │       ├── Navbar.js
+│   │       └── Navbar.module.css
+│   └── ui/             // Componentes más específicos de UI (carrusel, mapa, formulario)
+│       ├── Carousel/   // Carrusel de imágenes 
+│       │   ├── Carousel.js
+│       │   └── Carousel.module.css
+│       ├── Map/        // Mapa interactivo 
+│       │   ├── Map.js
+│       │   └── Map.module.css
+│       ├── ReservationForm/ // Formulario de reservas 
+│       │   ├── ReservationForm.js
+│       │   └── ReservationForm.module.css
+│       └── ContactForm/ // Formulario de contacto 
+│           ├── ContactForm.js
+│           └── ContactForm.module.css
+├── pages/              // Componentes de "página" (vistas principales)
+│   ├── Home/           // Página de inicio 
+│   │   ├── Home.js
+│   │   └── Home.module.css
+│   ├── Menu/           // Página del menú 
+│   │   ├── Menu.js
+│   │   └── Menu.module.css
+│   ├── Contact/        // Página de contacto 
+│   │   ├── Contact.js
+│   │   └── Contact.module.css
+├── context/            // Context API para gestión de estado global
+│   └── AuthContext.js
+│   └── MenuContext.js
+├── services/           // Funciones para interactuar con APIs externas
+│   ├── api.js          // Configuración de Axios, etc.
+│   ├── menuService.js  // Funciones CRUD para el menú 
+│   └── reservationService.js // Funciones CRUD para reservas 
+├── App.js              // Componente principal de la aplicación
+├── index.js            // Punto de entrada de la aplicación
+├── routes.js           // Definición de rutas (si no se usa react-router-dom directamente en App.js)
+├── reportWebVitals.js
+└── setupTests.js
