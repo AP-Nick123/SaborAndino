@@ -10,7 +10,7 @@ const firebaseConfig = {
  storageBucket: "formulario-ebcba.firebasestorage.app",
  essagingSenderId: "166604505716",
  appId: "1:166604505716:web:b1e7adb7c6c71ec9ca4721"
-};
+};  
 
 const app = initializeApp(firebaseConfig);
 
