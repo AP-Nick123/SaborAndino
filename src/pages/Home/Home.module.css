@@ -1,0 +1,7 @@
+.home {
+  /* Custom styles if needed */
+}
+.hero {
+  background-color: var(--primary-color); /* Andean red from _variables.scss */
+  border-radius: 8px;
+}
