@@ -1,0 +1,143 @@
+/* Navbar.module.css */
+
+/* --- ESTILOS BASE Y MÁS GRANDES --- */
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* CAMBIO: Sombra un poco más pronunciada */
+  padding: 0 2.5rem; /* CAMBIO: Más padding horizontal */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px; /* CAMBIO: Barra más alta */
+  max-width: 1300px; /* CAMBIO: Un poco más de ancho máximo */
+  margin: 0 auto;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.4rem; /* CAMBIO: Texto del logo más grande */
+}
+
+.logo {
+  height: 50px; /* CAMBIO: Logo más grande */
+  margin-right: 15px; /* CAMBIO: Más margen */
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem; /* CAMBIO: Más separación */
+  margin: 0;
+  padding: 0;
+  transition: transform 0.3s ease-in-out; /* Para la animación del menú móvil */
+}
+
+.navList a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  font-size: 1.1rem; /* CAMBIO: Links más grandes */
+  padding-bottom: 8px; /* CAMBIO: Más padding */
+  border-bottom: 4px solid transparent; /* CAMBIO: Borde más grueso */
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.navList a:hover {
+  color: #ff8c00;
+}
+
+.navList a.active {
+  color: #ff8c00;
+  border-bottom-color: #ff8c00;
+  font-weight: bold;
+}
+
+.desktopOnlyControls {
+  display: flex; /* Estos se muestran por defecto */
+  align-items: center;
+  gap: 1.5rem;
+  color: #555;
+}
+
+.languageSelector, .account {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+/* Ocultamos por defecto el botón de hamburguesa y los controles de móvil */
+.hamburgerButton {
+  display: none;
+}
+.mobileOnlyControls {
+  display: none;
+}
+
+/* ================================================= */
+/* ✨ ESTILOS PARA EL MENÚ RESPONSIVO (MÓVIL) ✨ */
+/* ================================================= */
+@media (max-width: 992px) { /* El punto de quiebre donde aparece la hamburguesa */
+  
+  /* 1. Ocultamos la navegación de escritorio y los controles */
+  .navList {
+    position: fixed;
+    top: 90px; /* Debajo de la barra de navegación */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 90px);
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(5px);
+    
+    /* Cambiamos a layout vertical */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    
+    /* Ocultamos el menú fuera de la pantalla por defecto */
+    transform: translateX(-100%);
+  }
+
+  /* La clase que añade el JS para mostrar el menú */
+  .navList.mobileNavOpen {
+    transform: translateX(0);
+  }
+  
+  .desktopOnlyControls {
+    display: none;
+  }
+  
+  /* 2. Mostramos el botón de hamburguesa */
+  .hamburgerButton {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem; /* Ícono de hamburguesa más grande */
+    color: #333;
+    cursor: pointer;
+    z-index: 1001; /* Para que esté por encima del menú */
+  }
+
+  /* 3. Mostramos los controles dentro del menú móvil */
+  .mobileOnlyControls {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #ddd;
+    padding-top: 2rem;
+  }
+}
