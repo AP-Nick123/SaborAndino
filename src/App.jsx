@@ -1,18 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// src/App.jsx
 
-import Dashboard from './components/admin/Dashborad'
-import Paneladmin from "./components/admin/paneladmin.jsx";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+// 1. Solo importamos las PÁGINAS completas
+import ReservasPage from './pages/Reservas/ReservasPage.jsx';
+import ContactoPage from './pages/Contacto/ContactoPage.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <Paneladmin/>
-    </>
-  )
+    // 2. Las rutas ahora son una lista simple. No están anidadas.
+    <Routes>
+      <Route path="/" element={<ReservasPage />} />
+      <Route path="/contacto" element={<ContactoPage />} />
+      {/* Puedes añadir más rutas aquí en el futuro */}
+    </Routes>
+  );
 }
 
-export default App
+export default App;
