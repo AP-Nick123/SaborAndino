@@ -1,20 +1,35 @@
-// src/components/Sidebar.jsx
+// src/components/admin/Sidebar.jsx
 import React from 'react';
+import './Sidebar.css'; // Importa tu archivo CSS para este componente
 
-const Sidebar = ({ setActiveSection }) => {
+export const Sidebar = ({ setActiveSection, activeSection }) => {
   return (
-    <div style={{
-      width: '220px',
-      backgroundColor: '#2c3e50',
-      color: '#fff',
-      padding: '20px'
-    }}>
-      <h2>Admin</h2>
-      <ul style={{ listStyle: 'none', padding: 0 }}>
-        <li onClick={() => setActiveSection('dashboard')} style={{ cursor: 'pointer', margin: '10px 0' }}>📊 Dashboard</li>
-        <li onClick={() => setActiveSection('menu')} style={{ cursor: 'pointer', margin: '10px 0' }}>🍽️ Menú</li>
-        <li onClick={() => setActiveSection('reservations')} style={{ cursor: 'pointer', margin: '10px 0' }}>📅 Reservas</li>
-        <li onClick={() => setActiveSection('messages')} style={{ cursor: 'pointer', margin: '10px 0' }}>💬 Mensajes</li>
+    <div className="admin-tabs-nav-container">
+      <ul className="admin-sidebar-menu">
+        <li
+          className={`admin-sidebar-item ${activeSection === 'dashboard' ? 'active' : ''}`}
+          onClick={() => setActiveSection('dashboard')}
+        >
+          <span className="icon">📊</span> Panel Principal
+        </li>
+        <li
+          className={`admin-sidebar-item ${activeSection === 'reservations' ? 'active' : ''}`}
+          onClick={() => setActiveSection('reservations')}
+        >
+          <span className="icon">📅</span> Reservas
+        </li>
+        <li
+          className={`admin-sidebar-item ${activeSection === 'menu' ? 'active' : ''}`}
+          onClick={() => setActiveSection('menu')}
+        >
+          <span className="icon">🍽️</span> Gestión de Menú
+        </li>
+        <li
+          className={`admin-sidebar-item ${activeSection === 'messages' ? 'active' : ''}`}
+          onClick={() => setActiveSection('messages')}
+        >
+          <span className="icon">💬</span> Mensajes
+        </li>
       </ul>
     </div>
   );

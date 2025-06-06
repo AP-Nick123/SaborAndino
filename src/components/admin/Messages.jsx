@@ -1,10 +1,15 @@
-// src/components/Messages.jsx
+// src/components/admin/Messages.jsx
 import React from 'react';
+import './Messages.css'; // Estilos para este componente
 
 const Messages = () => (
-  <div>
-    <h2>Mensajes de Contacto</h2>
-    <p>Mensajes recibidos (simulados)</p>
+  <div className="messages-container">
+    <h2 className="section-title">Mensajes de Contacto</h2>
+    <div className="messages-list-placeholder">
+      <p>Bandeja de entrada (simulada)</p>
+      <div className="message-item">De: Cliente1@example.com - Asunto: Pregunta sobre horario</div>
+      <div className="message-item">De: Cliente2@example.com - Asunto: Comentario sobre el servicio</div>
+    </div>
   </div>
 );
 
