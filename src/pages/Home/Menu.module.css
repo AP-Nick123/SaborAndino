@@ -1,4 +1,6 @@
 .menu {
-  background-color: #f9f9f9;
+  background-color: #fefefe;
   min-height: 100vh;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
