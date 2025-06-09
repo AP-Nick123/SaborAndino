@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { db } from '../../context/AuthContext'; // Revisa que la ruta sea correcta
+import { db } from '../../firebase/config'; // Revisa que la ruta sea correcta
 import { collection, getDocs, query } from 'firebase/firestore'; // Ya no necesitamos orderBy aquí
 
 export const useMenuItemsList = () => {
