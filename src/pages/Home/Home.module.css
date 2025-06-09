@@ -1,0 +1,13 @@
+/* src/pages/Home/Home.module.css */
+
+/* Este es el contenedor de toda la página */
+.pageContainer {
+  display: flex; /* Activa el layout flexible */
+  flex-direction: column; /* Apila los elementos verticalmente (Navbar, main, Footer) */
+  min-height: 100vh; /* ¡LA CLAVE! Le dice que ocupe como mínimo el 100% de la altura de la pantalla del navegador. */
+}
+
+/* Este es el contenedor del contenido principal (todo lo que no es Navbar ni Footer) */
+.contentWrap {
+  flex-grow: 1; /* ¡LA OTRA CLAVE! Le dice a la sección del contenido que "crezca" y ocupe todo el espacio vertical disponible, empujando así al Footer hasta el fondo. */
+}
