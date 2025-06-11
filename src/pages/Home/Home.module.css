@@ -1,5 +1,23 @@
-
 /* src/pages/Home/Home.module.css */
+
+.home {
+  background-color: #d35400; /* Naranja oscuro */
+  min-height: 100vh;
+}
+
+.hero {
+  background-color: #b34700; /* Fondo oscuro semitransparente */
+}
+
+.carouselSection {
+  width: 100%;
+  background-color: #fff3e0;
+}
+
+.footer {
+  background-color: #4e342e;
+  border-top: 2px solid #922b21;
+}
 
 /* Este es el contenedor de toda la página */
 .pageContainer {
@@ -11,44 +29,4 @@
 /* Este es el contenedor del contenido principal (todo lo que no es Navbar ni Footer) */
 .contentWrap {
   flex-grow: 1; /* ¡LA OTRA CLAVE! Le dice a la sección del contenido que "crezca" y ocupe todo el espacio vertical disponible, empujando así al Footer hasta el fondo. */
-}
-
-/* Estilos para la sección hero */
-.hero {
-  background-color: #1a2b3c; /* Fondo oscuro para contraste con texto blanco */
-  padding: 5rem 2rem; /* Espaciado generoso, coincide con py-5 de Bootstrap */
-  position: relative; /* Útil si agregas una imagen de fondo o superposiciones */
-  color: #ffffff; /* Asegura que todo el texto dentro sea blanco, redundante con text-white pero explícito */
-}
-
-/* Opcional: Si quieres una imagen de fondo para la sección hero */
-.heroWithImage {
-  background-image: url('../../assets/images/restaurante_ambiente.jpg'); /* Ajusta la ruta según tu estructura */
-  background-size: cover; /* Cubre toda la sección */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que se repita */
-  position: relative;
-}
-
-/* Opcional: Superposición para oscurecer la imagen de fondo y mejorar legibilidad */
-.heroWithImage::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Capa oscura semitransparente */
-  z-index: 1;
-}
-
-/* Asegura que el contenido dentro de hero esté sobre la superposición */
-.heroWithImage > * {
-  position: relative;
-  z-index: 2;
-}
-
-/* Estilos para la sección del carrusel */
-.carouselSection {
-  padding: 2rem 0; /* Coincide con py-4 de Bootstrap, ajustable según necesidad */
 }

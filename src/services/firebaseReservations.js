@@ -7,7 +7,7 @@ import {
   deleteDoc,
   Timestamp
 } from "firebase/firestore";
-import { db } from "../context/AuthContext";
+import { db } from "../context/AuthContext.jsx";
 
 const RESERVATIONS_COLLECTION = "reservations";
 
