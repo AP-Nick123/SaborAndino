@@ -9,6 +9,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute.jsx';
 function App() {
   return (
     <Routes>
+
       <Route path="/" element={<ReservasPage />} />
       <Route path="/contacto" element={<ContactoPage />} />
       <Route path="/login" element={<LoginPage />} />

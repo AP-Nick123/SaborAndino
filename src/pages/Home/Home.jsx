@@ -15,7 +15,7 @@ const carouselImages = [
   { src: ambiance, alt: 'Ambiente del Restaurante' },
 ];
 
-const Home = () => {
+export const Home = () => {
   return (
     <div className={styles.home}>
       <Header logo={logo} />
