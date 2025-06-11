@@ -1,5 +1,6 @@
 .carouselImage {
-  height: 300px;
+  width: 100%;
+  height: 500px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0; /* Opcional: puedes dejarlo rectangular si deseas */
 }

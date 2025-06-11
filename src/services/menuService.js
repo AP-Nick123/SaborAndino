@@ -9,5 +9,6 @@ export const getMenu = async () => {
     id: doc.id,
     ...doc.data()
   }));
+  console.log('🔥 Datos del menú desde Firestore:', menuItems); // 👈 Agrega esto
   return menuItems;
 };
