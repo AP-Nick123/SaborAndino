@@ -11,6 +11,7 @@ import Menu from './pages/Home/Menu.jsx'; // Agrega la importación de Menu
 function App() {
   return (
     <Routes>
+
       <Route path="/" element={<Home />} /> {/* Cambiado para que Home sea la página inicial */}
       <Route path="/reservas" element={<ReservasPage />} /> {/* Movido ReservasPage a /reservas */}
       <Route path="/contacto" element={<ContactoPage />} />

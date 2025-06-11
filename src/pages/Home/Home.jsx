@@ -53,7 +53,7 @@ const testimonials = [
   { id: 2, name: 'Carlos Pérez', text: 'El mejor lomo saltado que he probado, y el ambiente es acogedor.', rating: 4 },
 ];
 
-const Home = () => {
+export const Home = () => {
   return (
     <div className={layoutStyles.pageContainer}>
       <Navbar />
