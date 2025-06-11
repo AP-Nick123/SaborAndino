@@ -1,3 +1,5 @@
+/* src/pages/Home/Home.module.css */
+
 .home {
   background-color: #d35400; /* Naranja oscuro */
   min-height: 100vh;
@@ -5,6 +7,18 @@
 
 .hero {
   background-color: #b34700; /* Fondo oscuro semitransparente */
+}
+
+.heroWithImage {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #b34700; /* Color de respaldo si no carga la imagen */
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .carouselSection {
@@ -16,7 +30,6 @@
   background-color: #4e342e;
   border-top: 2px solid #922b21;
 }
-/* src/pages/Home/Home.module.css */
 
 /* Este es el contenedor de toda la página */
 .pageContainer {
