@@ -9,6 +9,18 @@
   background-color: #b34700; /* Fondo oscuro semitransparente */
 }
 
+.heroWithImage {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #b34700; /* Color de respaldo si no carga la imagen */
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .carouselSection {
   width: 100%;
   background-color: #fff3e0;
