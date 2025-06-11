@@ -1,77 +1,103 @@
+// src/pages/Home/Menu.jsx
 import React, { useEffect, useState } from 'react';
 import styles from './Menu.module.css';
 import { getMenu } from '../../services/menuService';
+import Navbar from '../../components/layout/Navbar/Navbar.jsx';
+import Footer from '../../components/layout/Footer/Footer.jsx';
+import layoutStyles from './Home.module.css';
 
 const categorias = ["Entradas", "Platos Principales", "Postres", "Bebidas"];
 
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("Entradas");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchMenu = async () => {
       try {
+        setLoading(true);
         const data = await getMenu();
+        console.log('Datos recibidos en Menu.jsx:', data);
         setMenuItems(data);
+        setLoading(false);
       } catch (error) {
         console.error('Error al obtener el menú:', error);
+        setError(error.message);
+        setLoading(false);
       }
     };
     fetchMenu();
   }, []);
 
-  useEffect(() => {
-    console.log('Datos del menú en componente:', menuItems);
-  }, [menuItems]);
-
   const itemsFiltrados = menuItems.filter(item => item.categoria && item.categoria === categoriaSeleccionada);
 
   return (
-    <div className={`container-fluid py-5 ${styles.menu}`}>
-      <h1 className="display-5 text-center mb-3">Nuestro Menú</h1>
-      <p className="text-center mb-4">
-        Descubre nuestra cuidada selección de platos andinos auténticos, preparados con los mejores ingredientes y técnicas tradicionales.
-      </p>
+    <div className={layoutStyles.pageContainer}>
+      <Navbar />
+      <main className={layoutStyles.contentWrap}>
+        <div className={`container-fluid py-5 ${styles.menu}`}>
+          <h1 className="display-5 text-center mb-3">Nuestro Menú</h1>
+          <p className="text-center mb-4">
+            Descubre nuestra cuidada selección de platos andinos auténticos, preparados con los mejores ingredientes y técnicas tradicionales.
+          </p>
 
-      <div className="d-flex justify-content-center mb-4 flex-wrap gap-2">
-        {categorias.map(cat => (
-          <button
-            key={cat}
-            className={`btn ${categoriaSeleccionada === cat ? 'btn-warning' : 'btn-outline-secondary'}`}
-            onClick={() => setCategoriaSeleccionada(cat)}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+          {/* Estado de carga o error */}
+          {loading && <p className="text-center text-muted">Cargando menú...</p>}
+          {error && <p className="text-center text-danger">Error: {error}</p>}
 
-      <div className="row justify-content-center px-3">
-        {itemsFiltrados.length === 0 ? (
-          <p className="text-center text-muted">No hay platos disponibles en esta categoría.</p>
-        ) : (
-          itemsFiltrados.map((item) => (
-            <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={item.id}>
-              <div className="card h-100 shadow-sm border-0">
-                <img
-                  src={item.imagen || 'https://via.placeholder.com/400x250'}
-                  className="card-img-top"
-                  alt={item.nombre}
-                  style={{ height: '200px', objectFit: 'cover' }}
-                />
-                <div className="card-body d-flex flex-column justify-content-between">
-                  <h5 className="card-title">{item.nombre}</h5>
-                  <p className="card-text text-muted">{item.descripcion}</p>
-                </div>
-                <div className="card-footer bg-white border-0 text-end">
-                  <strong className="text-warning">
-                    S/ {typeof item.precio === 'number' ? item.precio.toFixed(2) : 'N/A'}
-                  </strong>
-                </div>
-              </div>
+          {/* Botones de filtro por categoría */}
+          {!loading && !error && (
+            <div className="d-flex justify-content-center mb-4 flex-wrap gap-2">
+              {categorias.map(cat => (
+                <button
+                  key={cat}
+                  className={`btn ${categoriaSeleccionada === cat ? 'btn-warning' : 'btn-outline-secondary'}`}
+                  onClick={() => setCategoriaSeleccionada(cat)}
+                >
+                  {cat}
+                </button>
+              ))}
             </div>
-          ))
-        )}
-      </div>
+          )}
+
+          {/* Tabla de menú */}
+          {!loading && !error && (
+            <div className="px-3">
+              {menuItems.length === 0 && <p className="text-center text-muted">No se encontraron elementos en el menú.</p>}
+              {menuItems.length > 0 && itemsFiltrados.length === 0 && (
+                <p className="text-center text-muted">No hay platos disponibles en la categoría "{categoriaSeleccionada}".</p>
+              )}
+              {itemsFiltrados.length > 0 && (
+                <div className="table-responsive">
+                  <table className="table table-striped table-hover">
+                    <thead className="table-dark">
+                      <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">Precio</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {itemsFiltrados.map((item) => (
+                        <tr key={item.id}>
+                          <td>{item.nombre || 'Sin nombre'}</td>
+                          <td>{item.descripcion || 'Sin descripción'}</td>
+                          <td>{item.categoria || 'Sin categoría'}</td>
+                          <td>S/ {typeof item.precio === 'number' ? item.precio.toFixed(2) : 'N/A'}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 };
