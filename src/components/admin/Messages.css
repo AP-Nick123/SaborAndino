@@ -1,0 +1,31 @@
+/* src/components/admin/Messages.css */
+
+.messages-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.section-title {
+  font-size: 1.6em;
+  color: #343a40;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.messages-list-placeholder {
+  border: 1px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  color: #888;
+  border-radius: 5px;
+}
+
+.message-item {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  text-align: left;
+}

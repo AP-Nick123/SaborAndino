@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Ceviche Andino",
+    "description": "Fresh fish marinated in citrus with Andean herbs.",
+    "price": 15.99,
+    "image": "dish1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Lomo Saltado",
+    "description": "Stir-fried beef with vegetables and potatoes.",
+    "price": 18.99,
+    "image": "dish2.jpg"
+  }
+]

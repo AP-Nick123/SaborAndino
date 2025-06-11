@@ -1,0 +1,96 @@
+/* src/components/admin/Dashboard.css */
+
+.dashboard-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  width: 100%; /* Asegura que el contenedor del dashboard ocupe el 100% de su padre */
+  box-sizing: border-box;
+}
+
+.dashboard-title {
+  font-size: 1.6em;
+  color: #343a40;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.dashboard-description {
+  font-size: 0.95em;
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+
+.dashboard-stats-grid {
+  display: grid;
+  /* Utiliza auto-fit para crear columnas que se adapten, con un mínimo de 280px */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px; /* Espacio entre las tarjetas */
+  width: 100%; /* Asegura que el grid ocupe el 100% del contenedor */
+}
+
+.stat-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 120px; /* Altura fija para que las tarjetas se vean uniformes */
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.stat-card .stat-icon {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.stat-card.orange .stat-icon { background-color: #ff9100; }
+.stat-card.green .stat-icon { background-color: #28a745; }
+.stat-card.blue .stat-icon { background-color: #007bff; }
+
+
+.stat-card .stat-value {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #343a40;
+  margin: 0 0 5px 0;
+}
+
+.stat-card .stat-label {
+  font-size: 0.9em;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* Media Queries para Responsividad del Dashboard */
+@media (max-width: 992px) { /* Para tabletas en horizontal */
+  .dashboard-stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2-3 columnas */
+  }
+}
+
+@media (max-width: 768px) { /* Para tabletas en vertical o móviles grandes */
+  .dashboard-stats-grid {
+    grid-template-columns: 1fr; /* Una sola columna para móviles */
+  }
+  .dashboard-container {
+    padding: 15px;
+  }
+}
