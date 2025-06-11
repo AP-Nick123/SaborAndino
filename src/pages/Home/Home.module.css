@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+.home {
+  background-color: #d35400; /* Naranja oscuro */
+  min-height: 100vh;
+}
+
+.hero {
+  background-color: #b34700; /* Fondo oscuro semitransparente */
+}
+
+.carouselSection {
+  width: 100%;
+  background-color: #fff3e0;
+}
+
+.footer {
+  background-color: #4e342e;
+  border-top: 2px solid #922b21;
+}
+=======
 /* src/pages/Home/Home.module.css */
 
 /* Este es el contenedor de toda la página */
@@ -11,3 +31,4 @@
 .contentWrap {
   flex-grow: 1; /* ¡LA OTRA CLAVE! Le dice a la sección del contenido que "crezca" y ocupe todo el espacio vertical disponible, empujando así al Footer hasta el fondo. */
 }
+>>>>>>> origin/main
