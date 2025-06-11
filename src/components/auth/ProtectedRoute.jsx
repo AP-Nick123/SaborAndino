@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
-import { AuthContext } from '../../context/AuthContext'; // Usaremos un contexto mejorado
+import { AuthContext } from '../../context/AuthContext.jsx'; // Usaremos un contexto mejorado
 
 // Este componente recibe como "children" la página que queremos proteger (PanelAdmin)
 const ProtectedRoute = ({ children }) => {
